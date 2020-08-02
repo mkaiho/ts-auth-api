@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  ts-auth-api:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    container_name: ts-auth-api-local
+    ports:
+      - 3000:3000
+    volumes:
+      - ts_auth_api_node_modules_volume:/work/ts-auth-api/node_modules
+
+volumes:
+  ts_auth_api_node_modules_volume:
